@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="95" fill="#4E2A84" stroke="#4E2A84" stroke-width="2"/>
+  <text x="100" y="115" font-family="Georgia, serif" font-size="32" font-weight="bold" fill="white" text-anchor="middle">NU</text>
+  <text x="100" y="145" font-family="Georgia, serif" font-size="12" fill="white" text-anchor="middle">NORTHWESTERN</text>
+</svg>
