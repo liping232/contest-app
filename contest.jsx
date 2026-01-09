@@ -14,7 +14,7 @@ export default function ContestWebsite() {
     { rank: 1, name: 'Sarah Mitchell', team: 'Nova Squad', score: 9850, badge: '🥇' },
     { rank: 2, name: 'David Park', team: 'Quantum Leap', score: 9420, badge: '🥈' },
     { rank: 3, name: 'Emma Thompson', team: 'Digital Storm', score: 9180, badge: '🥉' },
-    { rank: 4, name: 'Lucas Silva', team: 'Apex Coders', score: 8760, badge: '' },
+    { rank: 4, name: 'Lucas Silva', team: 'CollegeApp Coders', score: 8760, badge: '' },
     { rank: 5, name: 'Aisha Patel', team: 'Binary Blitz', score: 8520, badge: '' },
     { rank: 6, name: 'Marcus Johnson', team: 'Tech Titans', score: 8340, badge: '' },
     { rank: 7, name: 'Nina Volkov', team: 'Cyber Surge', score: 8100, badge: '' },
@@ -203,7 +203,7 @@ export default function ContestWebsite() {
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent'
         }}>
-          APEX CHALLENGE
+          COLLEGEAPP CHALLENGE
         </div>
         <div className="flex gap-2">
           {['home', 'register', 'results'].map(tab => (
@@ -227,7 +227,7 @@ export default function ContestWebsite() {
             <div className="font-body text-xs tracking-widest mb-3" style={{ color: '#ff6b35' }}>
               ANNUAL COMPETITION 2025
             </div>
-            <h1 className="hero-title">APEX</h1>
+            <h1 className="hero-title">COLLEGEAPP</h1>
             <h1 className="hero-title" style={{ marginTop: '-8px' }}>CHALLENGE</h1>
             <p className="font-body text-sm font-light max-w-sm mt-4 mb-6 leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)' }}>
               Push your limits. Compete with the best. Rise to the top.
@@ -400,7 +400,7 @@ export default function ContestWebsite() {
         borderTop: '1px solid rgba(255, 107, 53, 0.2)',
         color: 'rgba(255,255,255,0.4)'
       }}>
-        <div>© 2025 Apex Challenge</div>
+        <div>© 2025 CollegeApp Challenge</div>
         <div className="flex gap-4">
           <span className="cursor-pointer hover:text-white transition-colors">Rules</span>
           <span className="cursor-pointer hover:text-white transition-colors">Contact</span>
