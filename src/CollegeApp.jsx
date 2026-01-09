@@ -414,8 +414,8 @@ export default function CollegeApp() {
             <circle cx="80" cy="58" r="4" fill="#fbbf24"/>
           </svg>
 
-          {/* Left Side - Clock & Trophy */}
-          <svg className="absolute top-1/3 left-2 w-28 h-28 md:w-40 md:h-40 opacity-85" viewBox="0 0 100 100">
+          {/* Left Side - Clock & Trophy - positioned at bottom left */}
+          <svg className="absolute bottom-16 left-2 w-24 h-24 md:w-32 md:h-32 opacity-85" viewBox="0 0 100 100">
             {/* Clock */}
             <circle cx="50" cy="50" r="35" fill="#fef3c7" stroke="#fbbf24" strokeWidth="3"/>
             <circle cx="50" cy="50" r="30" fill="#fffbeb"/>
@@ -424,7 +424,7 @@ export default function CollegeApp() {
             <circle cx="50" cy="50" r="3" fill="#1e3a5f"/>
           </svg>
 
-          <svg className="absolute bottom-1/3 left-8 w-24 h-24 md:w-32 md:h-32 opacity-80" viewBox="0 0 100 100">
+          <svg className="absolute bottom-40 left-32 w-20 h-20 md:w-28 md:h-28 opacity-80 hidden md:block" viewBox="0 0 100 100">
             {/* Trophy */}
             <path d="M35 30 L65 30 L60 55 L40 55 Z" fill="#fbbf24"/>
             <rect x="43" y="55" width="14" height="12" fill="#f59e0b"/>
@@ -465,22 +465,22 @@ export default function CollegeApp() {
             <line x1="55" y1="49" x2="75" y2="52" stroke="#bfdbfe" strokeWidth="2"/>
           </svg>
 
-          {/* Floating decorative elements */}
-          <div className="absolute top-24 left-1/3 w-3 h-3 bg-pink-300 rounded-full animate-pulse"></div>
-          <div className="absolute top-40 right-1/3 w-2 h-2 bg-blue-300 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-          <div className="absolute bottom-32 left-1/4 w-4 h-4 bg-yellow-300 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-          <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
+          {/* Floating decorative elements - positioned at edges only */}
+          <div className="absolute top-24 left-8 w-3 h-3 bg-pink-300 rounded-full animate-pulse"></div>
+          <div className="absolute top-40 right-12 w-2 h-2 bg-blue-300 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+          <div className="absolute bottom-32 right-8 w-4 h-4 bg-yellow-300 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 right-16 w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
 
-          {/* Sparkles */}
-          <svg className="absolute top-36 left-1/2 w-6 h-6 text-yellow-400 animate-pulse" viewBox="0 0 24 24" fill="currentColor">
+          {/* Sparkles - at edges */}
+          <svg className="absolute top-28 right-1/4 w-6 h-6 text-yellow-400 animate-pulse" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 0L14 10L24 12L14 14L12 24L10 14L0 12L10 10L12 0Z"/>
           </svg>
-          <svg className="absolute bottom-40 right-1/3 w-4 h-4 text-pink-400 animate-pulse" style={{animationDelay: '0.7s'}} viewBox="0 0 24 24" fill="currentColor">
+          <svg className="absolute bottom-24 right-16 w-4 h-4 text-pink-400 animate-pulse" style={{animationDelay: '0.7s'}} viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 0L14 10L24 12L14 14L12 24L10 14L0 12L10 10L12 0Z"/>
           </svg>
 
-          {/* Chat bubbles with hearts */}
-          <svg className="absolute bottom-1/3 left-1/3 w-16 h-12 opacity-90" viewBox="0 0 80 50">
+          {/* Chat bubbles with hearts - moved to right side */}
+          <svg className="absolute top-1/2 right-8 w-16 h-12 opacity-90 hidden md:block" viewBox="0 0 80 50">
             <rect x="5" y="5" width="70" height="30" rx="15" fill="#fef3c7" stroke="#fbbf24" strokeWidth="2"/>
             <polygon points="25,35 35,35 30,45" fill="#fef3c7" stroke="#fbbf24" strokeWidth="2" strokeLinejoin="round"/>
             <text x="40" y="25" textAnchor="middle" fontSize="16">❤️❤️❤️</text>
@@ -493,7 +493,7 @@ export default function CollegeApp() {
             <p className="text-xs font-semibold tracking-widest mb-4" style={{ color: blue }}>
               {t.hero.tagline}
             </p>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight drop-shadow-sm">
               {t.hero.title}<span className="blue-underline">{t.hero.titleHighlight}</span>
             </h1>
             <p className="text-gray-600 text-lg mb-8 leading-relaxed">
