@@ -239,6 +239,22 @@ export default function CollegeApp() {
     setMenuOpen(false);
   };
 
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email) {
+      alert(lang === 'en' ? 'Please fill in your name and email.' : '请填写您的姓名和邮箱。');
+      return;
+    }
+    setSubmitted(true);
+    // Reset form after submission
+    setTimeout(() => {
+      setFormData({ name: '', email: '', phone: '', grade: '', message: '' });
+      setSubmitted(false);
+    }, 3000);
+  };
+
   return (
     <div className="min-h-screen bg-white" style={{ fontFamily: "'Inter', 'Noto Sans SC', -apple-system, sans-serif" }}>
       <style>{`
@@ -732,10 +748,16 @@ export default function CollegeApp() {
                   />
                 </div>
                 <button
-                  className="w-full py-4 rounded-xl font-semibold text-white transition-all hover:shadow-lg hover:scale-[1.02]"
-                  style={{ backgroundColor: blue }}
+                  onClick={handleSubmit}
+                  disabled={submitted}
+                  className={`w-full py-4 rounded-xl font-semibold text-white transition-all hover:shadow-lg hover:scale-[1.02] ${
+                    submitted ? 'opacity-75 cursor-not-allowed' : ''
+                  }`}
+                  style={{ backgroundColor: submitted ? '#10B981' : blue }}
                 >
-                  {t.contact.form.submit}
+                  {submitted
+                    ? (lang === 'en' ? '✓ Request Sent!' : '✓ 已提交！')
+                    : t.contact.form.submit}
                 </button>
               </div>
             </div>
