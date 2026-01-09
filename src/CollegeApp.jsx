@@ -252,7 +252,7 @@ export default function CollegeApp() {
     setSubmitting(true);
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/yu.sun.cs@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/liping232@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
