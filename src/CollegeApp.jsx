@@ -378,17 +378,125 @@ export default function CollegeApp() {
         </div>
       )}
 
-      {/* Hero Section */}
-      <section className="pt-28 pb-16 px-5 bg-gradient-to-b from-blue-50/50 to-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="max-w-2xl">
+      {/* Hero Section with Illustrated Background */}
+      <section className="pt-28 pb-16 px-5 relative overflow-hidden min-h-[90vh] flex items-center" style={{ background: 'linear-gradient(135deg, #f8fafc 0%, #e0f2fe 50%, #fce7f3 100%)' }}>
+        {/* Decorative Education Elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          {/* Top Left - Documents & Papers */}
+          <svg className="absolute top-20 left-0 w-32 h-32 md:w-48 md:h-48 opacity-80" viewBox="0 0 100 100">
+            <rect x="10" y="20" width="35" height="45" rx="3" fill="#dbeafe" stroke="#93c5fd" strokeWidth="1.5" transform="rotate(-15 27 42)"/>
+            <rect x="15" y="25" width="25" height="3" rx="1" fill="#93c5fd" transform="rotate(-15 27 26)"/>
+            <rect x="15" y="32" width="20" height="2" rx="1" fill="#bfdbfe" transform="rotate(-15 25 33)"/>
+            <rect x="15" y="38" width="22" height="2" rx="1" fill="#bfdbfe" transform="rotate(-15 26 39)"/>
+          </svg>
+
+          <svg className="absolute top-32 left-20 w-24 h-24 md:w-36 md:h-36 opacity-70" viewBox="0 0 100 100">
+            <rect x="30" y="10" width="40" height="50" rx="3" fill="#fce7f3" stroke="#f9a8d4" strokeWidth="1.5" transform="rotate(10 50 35)"/>
+            <circle cx="50" cy="25" r="8" fill="#fbcfe8"/>
+            <rect x="38" y="38" width="24" height="2" rx="1" fill="#f9a8d4"/>
+            <rect x="40" y="44" width="20" height="2" rx="1" fill="#fbcfe8"/>
+          </svg>
+
+          {/* Top Right - Books & Graduation */}
+          <svg className="absolute top-16 right-4 w-36 h-36 md:w-52 md:h-52 opacity-80" viewBox="0 0 100 100">
+            {/* Stack of books */}
+            <rect x="45" y="50" width="45" height="12" rx="2" fill="#3b82f6" transform="rotate(-5 67 56)"/>
+            <rect x="48" y="38" width="42" height="10" rx="2" fill="#fbbf24" transform="rotate(3 69 43)"/>
+            <rect x="46" y="28" width="44" height="11" rx="2" fill="#f472b6" transform="rotate(-2 68 33)"/>
+          </svg>
+
+          <svg className="absolute top-40 right-24 w-20 h-20 md:w-28 md:h-28 opacity-90" viewBox="0 0 100 100">
+            {/* Graduation cap */}
+            <polygon points="50,20 85,35 50,50 15,35" fill="#1e3a5f"/>
+            <rect x="45" y="35" width="10" height="20" fill="#1e3a5f"/>
+            <ellipse cx="50" cy="55" rx="20" ry="8" fill="#2d4a6f"/>
+            <line x1="75" y1="35" x2="80" y2="55" stroke="#fbbf24" strokeWidth="2"/>
+            <circle cx="80" cy="58" r="4" fill="#fbbf24"/>
+          </svg>
+
+          {/* Left Side - Clock & Trophy */}
+          <svg className="absolute top-1/3 left-2 w-28 h-28 md:w-40 md:h-40 opacity-85" viewBox="0 0 100 100">
+            {/* Clock */}
+            <circle cx="50" cy="50" r="35" fill="#fef3c7" stroke="#fbbf24" strokeWidth="3"/>
+            <circle cx="50" cy="50" r="30" fill="#fffbeb"/>
+            <line x1="50" y1="50" x2="50" y2="28" stroke="#1e3a5f" strokeWidth="3" strokeLinecap="round"/>
+            <line x1="50" y1="50" x2="65" y2="50" stroke="#1e3a5f" strokeWidth="2" strokeLinecap="round"/>
+            <circle cx="50" cy="50" r="3" fill="#1e3a5f"/>
+          </svg>
+
+          <svg className="absolute bottom-1/3 left-8 w-24 h-24 md:w-32 md:h-32 opacity-80" viewBox="0 0 100 100">
+            {/* Trophy */}
+            <path d="M35 30 L65 30 L60 55 L40 55 Z" fill="#fbbf24"/>
+            <rect x="43" y="55" width="14" height="12" fill="#f59e0b"/>
+            <rect x="38" y="67" width="24" height="6" rx="2" fill="#1e3a5f"/>
+            <path d="M35 30 Q20 35 25 50 L35 45" fill="#fcd34d"/>
+            <path d="M65 30 Q80 35 75 50 L65 45" fill="#fcd34d"/>
+            <text x="50" y="47" textAnchor="middle" fontSize="12" fill="#1e3a5f" fontWeight="bold">#1</text>
+          </svg>
+
+          {/* Right Side - Arrows & Pencil */}
+          <svg className="absolute top-1/2 right-4 w-24 h-24 md:w-36 md:h-36 opacity-85" viewBox="0 0 100 100">
+            {/* Arrow up */}
+            <polygon points="50,10 70,40 58,40 58,70 42,70 42,40 30,40" fill="#fbbf24"/>
+          </svg>
+
+          <svg className="absolute top-2/3 right-20 w-20 h-20 md:w-28 md:h-28 opacity-75" viewBox="0 0 100 100">
+            {/* Pencil */}
+            <rect x="40" y="15" width="16" height="55" rx="2" fill="#fbbf24" transform="rotate(25 48 42)"/>
+            <polygon points="48,70 40,85 56,85" fill="#fcd34d" transform="rotate(25 48 77)"/>
+            <polygon points="48,80 45,90 51,90" fill="#1e3a5f" transform="rotate(25 48 85)"/>
+            <rect x="40" y="15" width="16" height="8" fill="#f472b6" transform="rotate(25 48 19)"/>
+          </svg>
+
+          {/* Bottom - Students & Items */}
+          <svg className="absolute bottom-10 left-10 w-32 h-32 md:w-44 md:h-44 opacity-80" viewBox="0 0 100 100">
+            {/* Paper airplane */}
+            <polygon points="10,50 50,35 45,50 50,65" fill="#dbeafe" stroke="#60a5fa" strokeWidth="1"/>
+            <line x1="50" y1="35" x2="90" y2="50" stroke="#60a5fa" strokeWidth="1" strokeDasharray="4"/>
+          </svg>
+
+          <svg className="absolute bottom-20 right-10 w-28 h-28 md:w-40 md:h-40 opacity-80" viewBox="0 0 100 100">
+            {/* Open book */}
+            <path d="M50 30 Q30 25 15 35 L15 75 Q30 65 50 70 Q70 65 85 75 L85 35 Q70 25 50 30 Z" fill="#dbeafe" stroke="#93c5fd" strokeWidth="2"/>
+            <line x1="50" y1="30" x2="50" y2="70" stroke="#93c5fd" strokeWidth="1"/>
+            <line x1="25" y1="45" x2="45" y2="42" stroke="#bfdbfe" strokeWidth="2"/>
+            <line x1="25" y1="52" x2="45" y2="49" stroke="#bfdbfe" strokeWidth="2"/>
+            <line x1="55" y1="42" x2="75" y2="45" stroke="#bfdbfe" strokeWidth="2"/>
+            <line x1="55" y1="49" x2="75" y2="52" stroke="#bfdbfe" strokeWidth="2"/>
+          </svg>
+
+          {/* Floating decorative elements */}
+          <div className="absolute top-24 left-1/3 w-3 h-3 bg-pink-300 rounded-full animate-pulse"></div>
+          <div className="absolute top-40 right-1/3 w-2 h-2 bg-blue-300 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+          <div className="absolute bottom-32 left-1/4 w-4 h-4 bg-yellow-300 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
+
+          {/* Sparkles */}
+          <svg className="absolute top-36 left-1/2 w-6 h-6 text-yellow-400 animate-pulse" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0L14 10L24 12L14 14L12 24L10 14L0 12L10 10L12 0Z"/>
+          </svg>
+          <svg className="absolute bottom-40 right-1/3 w-4 h-4 text-pink-400 animate-pulse" style={{animationDelay: '0.7s'}} viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0L14 10L24 12L14 14L12 24L10 14L0 12L10 10L12 0Z"/>
+          </svg>
+
+          {/* Chat bubbles with hearts */}
+          <svg className="absolute bottom-1/3 left-1/3 w-16 h-12 opacity-90" viewBox="0 0 80 50">
+            <rect x="5" y="5" width="70" height="30" rx="15" fill="#fef3c7" stroke="#fbbf24" strokeWidth="2"/>
+            <polygon points="25,35 35,35 30,45" fill="#fef3c7" stroke="#fbbf24" strokeWidth="2" strokeLinejoin="round"/>
+            <text x="40" y="25" textAnchor="middle" fontSize="16">❤️❤️❤️</text>
+          </svg>
+        </div>
+
+        {/* Main Content */}
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="max-w-2xl mx-auto text-center md:text-left md:mx-0">
             <p className="text-xs font-semibold tracking-widest mb-4" style={{ color: blue }}>
               {t.hero.tagline}
             </p>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               {t.hero.title}<span className="blue-underline">{t.hero.titleHighlight}</span>
             </h1>
-            <p className="text-gray-500 text-lg mb-8 leading-relaxed">
+            <p className="text-gray-600 text-lg mb-8 leading-relaxed">
               {t.hero.subtitle}
             </p>
             <button
@@ -401,9 +509,9 @@ export default function CollegeApp() {
           </div>
 
           {/* Stats Cards */}
-          <div className="grid grid-cols-3 gap-4 mt-16 max-w-lg">
+          <div className="grid grid-cols-3 gap-4 mt-16 max-w-lg mx-auto md:mx-0">
             {t.results.stats.map((stat, i) => (
-              <div key={i} className="bg-white rounded-2xl p-4 card-shadow text-center">
+              <div key={i} className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 card-shadow text-center">
                 <p className="text-2xl md:text-3xl font-bold" style={{ color: blue }}>{stat.value}</p>
                 <p className="text-xs text-gray-400 mt-1">{stat.label}</p>
               </div>
