@@ -240,19 +240,48 @@ export default function CollegeApp() {
   };
 
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email) {
       alert(lang === 'en' ? 'Please fill in your name and email.' : '请填写您的姓名和邮箱。');
       return;
     }
-    setSubmitted(true);
-    // Reset form after submission
-    setTimeout(() => {
-      setFormData({ name: '', email: '', phone: '', grade: '', message: '' });
-      setSubmitted(false);
-    }, 3000);
+
+    setSubmitting(true);
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/yu.sun.cs@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || 'Not provided',
+          grade: formData.grade || 'Not provided',
+          message: formData.message || 'No message',
+          _subject: `New Consultation Request from ${formData.name}`,
+        })
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setTimeout(() => {
+          setFormData({ name: '', email: '', phone: '', grade: '', message: '' });
+          setSubmitted(false);
+        }, 3000);
+      } else {
+        alert(lang === 'en' ? 'Failed to send. Please try again.' : '发送失败，请重试。');
+      }
+    } catch (error) {
+      alert(lang === 'en' ? 'Failed to send. Please try again.' : '发送失败，请重试。');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -749,15 +778,17 @@ export default function CollegeApp() {
                 </div>
                 <button
                   onClick={handleSubmit}
-                  disabled={submitted}
+                  disabled={submitted || submitting}
                   className={`w-full py-4 rounded-xl font-semibold text-white transition-all hover:shadow-lg hover:scale-[1.02] ${
-                    submitted ? 'opacity-75 cursor-not-allowed' : ''
+                    (submitted || submitting) ? 'opacity-75 cursor-not-allowed' : ''
                   }`}
                   style={{ backgroundColor: submitted ? '#10B981' : blue }}
                 >
-                  {submitted
-                    ? (lang === 'en' ? '✓ Request Sent!' : '✓ 已提交！')
-                    : t.contact.form.submit}
+                  {submitting
+                    ? (lang === 'en' ? 'Sending...' : '发送中...')
+                    : submitted
+                      ? (lang === 'en' ? '✓ Request Sent!' : '✓ 已提交！')
+                      : t.contact.form.submit}
                 </button>
               </div>
             </div>
